@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuernseyPool.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+
+                <Image
+                    Source="Images\InternationalLeisure.jpg"
+                    HeightRequest="200"
+                    HorizontalOptions="Center" />
+                
+                <Image
+                    Source="Images\Randalls.jpg"
+                    HeightRequest="200"
+                    HorizontalOptions="Center" />
+
+                <Image
+                    Source="Images\LiberationGroup.jpg"
+                    HeightRequest="150"
+                    HorizontalOptions="Center" />
+
+            </HorizontalStackLayout>
+
+            <Button
+                x:Name="ScoreCardWinter"
+                Text="Winter Leageue Pool Score Card"
+                Clicked="OnScoreCardWinterClicked"
+                HorizontalOptions="Center" />
+            
+            <Button
+                x:Name="ScoreCardSummer"
+                Text="Summer Leageue Pool Score Card"
+                Clicked="OnScoreCardSummerClicked"
+                HorizontalOptions="Center" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
