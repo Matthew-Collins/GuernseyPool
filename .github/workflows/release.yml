@@ -17,16 +17,14 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore
     - name: Build
-      run: dotnet publish --no-restore -r maui-android
+      run: dotnet build -f net6.0-android
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
     - name: Publish
       uses: softprops/action-gh-release@v1
       with:
-          files: "*.dll"
+          files: "*.apk"
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
