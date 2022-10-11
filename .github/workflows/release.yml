@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish --no-restore
+      run: dotnet publish --no-restore -r maui-android
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
