@@ -70,8 +70,7 @@ namespace GuernseyPool.Pages
         [RelayCommand]
         public async Task Submit()
         {
-            //Model.Submit();
-            this.started.AddDays(1);
+            await Model.Submit();
         }
 
     }
