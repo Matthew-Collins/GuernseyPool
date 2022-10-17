@@ -15,17 +15,17 @@
                 HorizontalOptions="Center">
 
                 <Image
-                    Source="Images\InternationalLeisure.jpg"
+                    Source="international_leisure.jpg"
                     HeightRequest="200"
                     HorizontalOptions="Center" />
                 
                 <Image
-                    Source="Images\Randalls.jpg"
+                    Source="randalls.jpg"
                     HeightRequest="100"
                     HorizontalOptions="Center" />
 
                 <Image
-                    Source="Images\LiberationGroup.jpg"
+                    Source="liberation_group.jpg"
                     HeightRequest="150"
                     HorizontalOptions="Center" />
 
