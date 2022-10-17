@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Net.Http.Json;
 
 namespace GuernseyPool.Model
 {
 
     public class ScoreCard
     {
-
         public string League { get; set; }
         public Boolean IsWinterLeague { get; set; }
         public DateTime Date { get; set; }
@@ -18,28 +16,8 @@ namespace GuernseyPool.Model
         public int HomeWins { get; set; }
         public int AwayWins { get; set; }
 
-        public DateTime? Submitted { get; set; }
-
         public ScoreCard(Boolean IsWinterLeague){
             this.IsWinterLeague = IsWinterLeague;
-        }
-
-        public async Task<bool> Submit()
-        {
-            this.Submitted = DateTime.Now;
-            var Data = JsonContent.Create(this);
-            var Client = new HttpClient();
-            var Response = await Client.PostAsync("https://leaguenights.click/GuernseyPool/Submit", Data);
-            if (Response.IsSuccessStatusCode)
-            {
-                // TODO: Save Locally
-                return true;
-            }
-            else
-            {
-                this.Submitted = null;
-                return false;
-            }
         }
 
     }

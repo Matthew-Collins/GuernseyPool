@@ -57,12 +57,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Images\Randalls.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiAsset Include="Images\InternationalLeisure.jpg" />
 	  <MauiAsset Include="Images\LiberationGroup.jpg" />
+	  <MauiAsset Include="Images\Randalls.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.1.1" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	</ItemGroup>
 
 </Project>

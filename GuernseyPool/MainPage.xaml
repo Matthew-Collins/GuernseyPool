@@ -9,7 +9,10 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <HorizontalStackLayout HorizontalOptions="Center">
+            <HorizontalStackLayout 
+                Spacing="25"
+                Padding="30,0"
+                HorizontalOptions="Center">
 
                 <Image
                     Source="Images\InternationalLeisure.jpg"
@@ -18,7 +21,7 @@
                 
                 <Image
                     Source="Images\Randalls.jpg"
-                    HeightRequest="200"
+                    HeightRequest="100"
                     HorizontalOptions="Center" />
 
                 <Image
@@ -30,13 +33,13 @@
 
             <Button
                 x:Name="ScoreCardWinter"
-                Text="Winter Leageue Pool Score Card"
+                Text="Winter League Pool Score Card"
                 Clicked="OnScoreCardWinterClicked"
                 HorizontalOptions="Center" />
             
             <Button
                 x:Name="ScoreCardSummer"
-                Text="Summer Leageue Pool Score Card"
+                Text="Summer League Pool Score Card"
                 Clicked="OnScoreCardSummerClicked"
                 HorizontalOptions="Center" />
             
