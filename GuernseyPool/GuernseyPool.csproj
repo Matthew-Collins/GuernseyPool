@@ -49,14 +49,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Remove="View\ScoreCardPage.xaml.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Remove="View\ScoreCardPage.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Images\Randalls.jpg" />
 	</ItemGroup>
 

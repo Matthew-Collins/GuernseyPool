@@ -10,12 +10,12 @@
 
         private void OnScoreCardWinterClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new View.ScoreCardPage(new Model.ScoreCard(true)));
+            Navigation.PushAsync(new Pages.ScoreCardPage(new Model.ScoreCard(true)));
         }
 
         private void OnScoreCardSummerClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new View.ScoreCardPage(new Model.ScoreCard(false)));
+            Navigation.PushAsync(new Pages.ScoreCardPage(new Model.ScoreCard(false)));
         }
 
     }

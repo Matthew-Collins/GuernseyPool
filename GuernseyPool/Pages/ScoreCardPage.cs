@@ -5,7 +5,7 @@ using CommunityToolkit.Maui.Markup;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace GuernseyPool.View
+namespace GuernseyPool.Pages
 {
  
     public class ScoreCardPage : ContentPage

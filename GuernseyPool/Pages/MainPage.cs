@@ -6,7 +6,7 @@ using CommunityToolkit.Maui.Markup;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace GuernseyPool.View
+namespace GuernseyPool.Pages
 {
     public class MainPage : ContentPage
     {
@@ -17,8 +17,8 @@ namespace GuernseyPool.View
                 Children = {
 
                     new Image()
-                        
-                        
+
+
 
                 }
             };
