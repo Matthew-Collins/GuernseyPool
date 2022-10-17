@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish --framework net6.0-android --no-restore
+      run: dotnet publish --framework net6.0-android --configuration Release --no-restore
 
     - name: Android
       uses: actions/upload-artifact@v2
