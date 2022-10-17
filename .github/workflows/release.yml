@@ -26,4 +26,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Android
-        path: GuernseyPool\bin\Release\net6.0-android\GuernseyPool-signed.apk
+        path: GuernseyPool\bin\Release\net6.0-android\publish\com.companyname.guernseypool-Signed.apk
