@@ -20,13 +20,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet publish --framework net6.0-android --no-restore
 
-    - name: Publish
-      uses: softprops/action-gh-release@v1
+    - name: Android
+      uses: actions/upload-artifact@v2
       with:
-          files: "*.apk"
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Android
+        path: GuernseyPool\bin\Release\net6.0-android\GuernseyPool-signed.apk
