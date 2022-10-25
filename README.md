@@ -1,2 +1,2 @@
-# Guernsey Pool & Snooker
-Apps for Pool and Snooker in Guernsey (including Score Card app)
+# Guernsey Pool
+Apps for Guernsey Pool mainly a Score Card app to enter and submit results.
