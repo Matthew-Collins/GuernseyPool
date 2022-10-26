@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using CommunityToolkit.Maui.Markup;
 
@@ -74,6 +75,9 @@ namespace GuernseyPool
                             .OnClicked(OnScoreCardSummerClicked)
                             .CenterHorizontal(),
 
+                        new Label()
+                            .Text($"Built: {new FileInfo(Assembly.GetExecutingAssembly().Location).LastWriteTime:d MMM yyyy HH:mm:ss}")
+                            .CenterHorizontal()
                     }
                 }
                     .BackgroundColor(Colors.Green)
