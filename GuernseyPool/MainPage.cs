@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CommunityToolkit.Maui.Markup;
-using Microsoft.Maui.Controls.Shapes;
 
 namespace GuernseyPool
 {
@@ -18,11 +17,6 @@ namespace GuernseyPool
             {
                 Content = new StackLayout
                 {
-
-                    BackgroundColor = Colors.Green,
-                    Spacing = 10,
-                    Padding = 10,
-
                     Children =
                     {
 
@@ -30,13 +24,13 @@ namespace GuernseyPool
                         {
                             Children = 
                             {
-                                new Label() { TextColor = Colors.White }
-                                    .Text("Guernsey Pool" )
+                                new Label()
+                                    .Text("Guernsey Pool", Colors.White)
                                     .Font(bold:true, size:40)
                                     .CenterHorizontal(),
 
-                                new Label() { TextColor = Colors.White }
-                                    .Text("Captains Challenge")
+                                new Label()
+                                    .Text("Captains Challenge", Colors.White)
                                     .Font(bold:true, size:28)
                                     .CenterHorizontal(),
                             }
@@ -45,69 +39,55 @@ namespace GuernseyPool
 
                         new Border()
                         {
-
-                            StrokeShape = new RoundRectangle() { CornerRadius = 15 },
-
                             Content = new StackLayout()
                             {
 
-                                new Image() { HeightRequest = 200 }
-                                    .Source("international_leisure.jpg"),
+                                new Image()
+                                    .Source("international_leisure.jpg")
+                                    .Height(200),
 
-                                new Image() { HeightRequest = 110 }
-                                    .Source("randalls.jpg"),
+                                new Image()
+                                    .Source("randalls.jpg")
+                                    .Height(110),
 
-                                new Image() { HeightRequest = 150 }
+                                new Image()
                                     .Source("liberation_group.jpg")
+                                    .Height(150),
 
                             }
-                                .Paddings(10)
-                                .Invoke(x => { 
-
-                                                x.BackgroundColor = Colors.White;
-                                                x.Spacing = 20;
-
-                                                if (DeviceDisplay.Current.MainDisplayInfo.Orientation == DisplayOrientation.Portrait)
-                                                { 
-                                                    x.Orientation = StackOrientation.Vertical;
-                                                }
-                                                else
-                                                {
-                                                    x.Orientation = StackOrientation.Horizontal;
-                                                }
-
-                                                OrientedItems.Add(x);
-                                                DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
-                                    
-                                            })
+                                .BackgroundColor(Colors.White)
+                                .Spacing(20)
+                                .Padding(10) 
+                                .OrientationOfDisplay()
+                                .AddToList(OrientedItems)
                         }
+                            .RoundCorners(15)
                             .CenterHorizontal(),
 
                         new Button()
                             .Text("Winter League Pool Score Card")
-                            .Invoke(x => x.Clicked += OnScoreCardWinterClicked)
+                            .OnClicked(OnScoreCardWinterClicked)
                             .CenterHorizontal(),
 
                         new Button()
                             .Text("Summer League Pool Score Card")
-                            .Invoke(x => x.Clicked += OnScoreCardSummerClicked)
+                            .OnClicked(OnScoreCardSummerClicked)
                             .CenterHorizontal(),
 
                     }
                 }
+                    .BackgroundColor(Colors.Green)
+                    .Spacing(10)
+                    .Padding(10)
             };
-        }
 
+            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
+
+        }
+        
         private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
         {
-            if (e.DisplayInfo.Orientation == DisplayOrientation.Portrait)
-            {
-                OrientedItems.ForEach(x => x.Orientation = StackOrientation.Vertical);
-            }
-            else 
-            {
-                OrientedItems.ForEach(x => x.Orientation = StackOrientation.Horizontal);
-            }
+            OrientedItems.ForEach(x => x.OrientationOfDisplay(e.DisplayInfo));
         }
 
         private void OnScoreCardWinterClicked(object sender, EventArgs e)

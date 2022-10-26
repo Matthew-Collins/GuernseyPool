@@ -15,6 +15,8 @@ namespace GuernseyPool.Pages
         enum Column { Players, PlayerTotals, HomeScore, HomePlayer, Vs, AwayPlayer, AwayScore }
         enum Row { DateVenue, HomeTeam, PlayerA, PlayerB, PlayerC, PlayerD, PlayerE, Frame6, Frame7, AwayTeam, PlayerF, PlayerG, PlayerH, PlayerI, PlayerJ, Frame14, Frame15 }
 
+        public Label SubmitInfo;
+
         public ScoreCardPage(Model.ScoreCard Model)
         {
 
@@ -917,8 +919,12 @@ namespace GuernseyPool.Pages
 
                         new Button()
                             .Text("Submit")
-                            .Invoke(x => x.Clicked += OnSubmitClicked)
+                            .OnClicked(OnSubmitClicked)
+                            .CenterHorizontal(),
+
+                        new Label()
                             .CenterHorizontal()
+                            .Assign(out SubmitInfo)
 
                     }
                 }
@@ -927,9 +933,21 @@ namespace GuernseyPool.Pages
 
         private async void OnSubmitClicked(object sender, EventArgs e)
         {
-            if (await Model.Submit())
+            try
             {
-                ((Button)sender).IsEnabled = false;
+                if (await Model.Submit())
+                {
+                    ((Button)sender).IsEnabled = false;
+                    SubmitInfo.Text = "Submit Successful!";
+                }
+                else
+                {
+                    SubmitInfo.Text = "Submit Failed!";
+                }
+            }
+            catch (Exception ex)
+            {
+                SubmitInfo.Text = $"Submit Failed!{Environment.NewLine}{Environment.NewLine}{ex}";
             }
         }
 
