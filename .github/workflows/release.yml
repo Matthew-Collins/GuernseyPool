@@ -20,7 +20,7 @@ jobs:
     - name: Install T4
       run: dotnet tool install -g dotnet-t4
     - name: Run T4
-      run: t4 App.tt
+      run: t4 GuernseyPool\App.tt
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
