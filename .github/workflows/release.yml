@@ -17,6 +17,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+    - name: Install T4
+      run: dotnet tool install -g dotnet-t4
+    - name: Run T4
+      run: t4 App.tt
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
