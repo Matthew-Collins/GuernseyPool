@@ -76,7 +76,7 @@ namespace GuernseyPool
                             .CenterHorizontal(),
 
                         new Label()
-                            .Text($"Built: {new FileInfo(Assembly.GetExecutingAssembly().Location).LastWriteTime:d MMM yyyy HH:mm:ss}")
+                            .Text($"Built: {App.Built:d MMM yyyy HH:mm:ss}")
                             .CenterHorizontal()
                     }
                 }

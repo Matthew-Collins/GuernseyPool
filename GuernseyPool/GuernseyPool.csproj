@@ -51,4 +51,23 @@
 	  <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.1.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="App.tt">
+	    <Generator>TextTemplatingFileGenerator</Generator>
+	    <LastGenOutput>App.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="App.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>App.tt</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>
