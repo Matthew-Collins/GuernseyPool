@@ -70,4 +70,8 @@
 	  </Compile>
 	</ItemGroup>
 
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	  <Exec Command="t4 App.tt" />
+	</Target>
+
 </Project>
